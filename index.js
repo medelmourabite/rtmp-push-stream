@@ -17,6 +17,10 @@ app.use(bodyParser.json({
     },
 }));
 
+app.get("/", (req, res) => {
+    res.send("WORKING");
+})
+
 app.post('/stream', (req, res) => {
     const { id, src, dist } = req.body;
     console.log(req.body);
@@ -67,6 +71,7 @@ app.post('/stream', (req, res) => {
     }
 });
 
+/*
 app.post('/start-stream', (req, res) => {
     const { id, src, dist } = req.body;
     console.log(req.body);
@@ -94,6 +99,7 @@ app.post('/start-stream', (req, res) => {
         res.end();
     }
 });
+*/
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
